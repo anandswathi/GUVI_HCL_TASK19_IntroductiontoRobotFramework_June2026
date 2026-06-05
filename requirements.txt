@@ -1,0 +1,9 @@
+# Python packages this project needs.
+# Install them all at once with:  pip install -r requirements.txt
+
+# Robot Framework -> the test automation framework itself.
+robotframework
+
+# SeleniumLibrary -> adds the browser-control keywords used in the page objects.
+# It installs Selenium automatically as a dependency.
+robotframework-seleniumlibrary

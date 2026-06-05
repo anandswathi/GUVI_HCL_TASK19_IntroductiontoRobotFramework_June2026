@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.2 on win32)" generated="2026-06-05T16:15:08.213994" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\Swathi Anand\PycharmProjects\GUVI_HCL_TASK19_IntroductiontoRobotFramework_June2026\RobotSpareBin_POM\tests\login.robot">
+<test id="s1-t1" name="Valid Login Logs The User In Successfully" line="24">
+<kw name="Open Application" owner="config" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-05T16:15:08.437809" level="INFO">Opening browser 'Chrome' to base url 'https://robotsparebinindustries.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-05T16:15:08.437616" elapsed="1.674708"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.112581" elapsed="0.033733"/>
+</kw>
+<doc>Opens the application in a browser.</doc>
+<status status="PASS" start="2026-06-05T16:15:08.436984" elapsed="1.709560"/>
+</kw>
+<kw name="Login Page Should Be Open" owner="login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${USERNAME_INPUT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.147292" elapsed="0.019258"/>
+</kw>
+<doc>Verify that the login page is displayed.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.147002" elapsed="0.019692"/>
+</kw>
+<kw name="Login With Valid Credentials" owner="login_page">
+<kw name="Enter Username" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-05T16:15:10.167883" level="INFO">Typing text 'maria' into text field 'id:username'.</msg>
+<arg>${USERNAME_INPUT}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.167649" elapsed="0.109184"/>
+</kw>
+<arg>${USERNAME}</arg>
+<doc>Enter the username into the username field.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.167387" elapsed="0.109749"/>
+</kw>
+<kw name="Enter Password" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-05T16:15:10.278780" level="INFO">Typing password into text field 'name:password'.</msg>
+<msg time="2026-06-05T16:15:10.356012" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.278248" elapsed="0.149071"/>
+</kw>
+<arg>${PASSWORD}</arg>
+<doc>Enter the password into the password field.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.277628" elapsed="0.149934"/>
+</kw>
+<kw name="Submit Login Form" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-05T16:15:10.429531" level="INFO">Clicking button 'css:form &gt; button'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.428853" elapsed="0.069236"/>
+</kw>
+<doc>Click the Login button.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.428046" elapsed="0.070205"/>
+</kw>
+<doc>Log in using valid credentials from config.resource.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.167078" elapsed="0.331233"/>
+</kw>
+<kw name="Sales Page Should Be Open" owner="sales_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_INPUT}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.499536" elapsed="1.910385"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-06-05T16:15:12.418698" level="INFO">Current page contains element 'id:firstname'.</msg>
+<arg>${FIRSTNAME_INPUT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-06-05T16:15:12.410373" elapsed="0.008802"/>
+</kw>
+<doc>Verify that the Sales page is displayed after login.</doc>
+<status status="PASS" start="2026-06-05T16:15:10.499014" elapsed="1.920402"/>
+</kw>
+<kw name="Logout" owner="sales_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-05T16:15:12.420832" level="INFO">Clicking button 'id:logout'.</msg>
+<arg>${LOGOUT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-05T16:15:12.420457" elapsed="0.068485"/>
+</kw>
+<doc>Log out from the application.</doc>
+<status status="PASS" start="2026-06-05T16:15:12.420018" elapsed="0.069083"/>
+</kw>
+<kw name="Close Application" owner="config" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-05T16:15:12.490086" elapsed="2.163046"/>
+</kw>
+<doc>Closes the browser after test execution.</doc>
+<status status="PASS" start="2026-06-05T16:15:12.489713" elapsed="2.163533"/>
+</kw>
+<doc>Verify that a user can successfully log in and log out.</doc>
+<status status="PASS" start="2026-06-05T16:15:08.436261" elapsed="6.217135"/>
+</test>
+<doc>Login test implemented using the Page Object Model (POM).
+This test file contains only business actions and no locators.
+All locators and page-specific actions are maintained in
+separate page object files.</doc>
+<status status="PASS" start="2026-06-05T16:15:08.214981" elapsed="6.438936"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="1" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
